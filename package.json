@@ -1,0 +1,27 @@
+{
+  "name": "hackathon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongodb-core": "^3.1.2",
+    "mongoose": "^5.2.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WestonDockstader/hakathawne.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WestonDockstader/hakathawne/issues"
+  },
+  "homepage": "https://github.com/WestonDockstader/hakathawne#readme"
+}

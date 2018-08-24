@@ -3,7 +3,7 @@ let Posts = require('../models/post')
 let Comments = require('../models/comment')
 
 router.get('', (req, res) => {
-  Posts.find({})
+  Posts.find()
     .then(posts => {
       res.status(200).send(posts)
     })

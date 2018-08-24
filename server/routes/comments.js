@@ -2,7 +2,7 @@ let router = require('express').Router()
 let Comments = require('../models/comment')
 
 router.get('', (req, res) => {
-  Comments.find({})
+  Comments.find()
     .then(comments => {
       res.status(200).send(comments)
     })

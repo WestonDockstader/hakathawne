@@ -1,4 +1,10 @@
 import User from '../models/user.js'
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: 'https://localhost:3000/',
+  timeout: 3000
+})
 
 let store
 
@@ -13,29 +19,16 @@ function setState(prop, data) {
 
 export default class Store {
   login(creds, draw) {
-    fetch('/auth/login', {
-      method: 'post',
-      body: JSON.stringify(creds),
-      headers: {
-        "Content-Type": "application/json; charset=utf-8"
-      }
-    })
-      .then(res => res.json())
+    console.log('login creds', creds)
+    api.post('auth/login', creds)
       .then(data => {
-        setState('user', new User(data))
+        setState('user', new User(data.data))
         draw()
       })
       .catch(console.error)
   }
   register(creds, draw) {
-    fetch('/auth/register', {
-      method: 'post',
-      body: JSON.stringify(creds),
-      headers: {
-        "Content-Type": "application/json; charset=utf-8"
-      }
-    })
-      .then(res => res.json())
+    api.post('auth/register', creds)
       .then(data => {
         setState('user', new User(data))
         draw()

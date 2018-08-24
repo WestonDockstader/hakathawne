@@ -11,14 +11,14 @@
 <body>
   <div id="app">
     <form id="login" onsubmit="app.controllers.user.login(event)">
-      <input type="text" name="username" placeholder="username">
-      <input type="password" name="pin" placeholder="pin">
+      <input type="text" name="username" placeholder="username" autocomplete="username">
+      <input type="password" name="pin" placeholder="pin" autocomplete="current-password">
       <button type="submit">Login</button>
       <p onclick="switchForms()" style="cursor: default;">Not a user?</p>
     </form>
     <form id="register" style="display:none" onsubmit="app.controllers.user.register(event)">
-      <input type="text" name="username" placeholder="username">
-      <input type="password" name="pin" placeholder="pin">
+      <input type="text" name="username" placeholder="username" autocomplete="username">
+      <input type="password" name="pin" placeholder="pin" autocomplete="current-password">
       <button type="submit">Register</button>
       <p onclick="switchForms()" style="cursor: default;">Already a user?</p>
     </form>
