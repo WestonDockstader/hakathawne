@@ -10,14 +10,22 @@
 
 <body>
   <div id="app">
-    <form onsubmit="app.controllers.user.login(event)">
+    <form id="login" onsubmit="app.controllers.user.login(event)">
       <input type="text" name="username" placeholder="username">
       <input type="password" name="pin" placeholder="pin">
       <button type="submit">Login</button>
+      <p onclick="switchForms()" style="cursor: default;">Not a user?</p>
+    </form>
+    <form id="register" style="display:none" onsubmit="app.controllers.user.register(event)">
+      <input type="text" name="username" placeholder="username">
+      <input type="password" name="pin" placeholder="pin">
+      <button type="submit">Register</button>
+      <p onclick="switchForms()" style="cursor: default;">Already a user?</p>
     </form>
   </div>
 
   <script src="app/main.js" type="module"></script>
+  <script src="assets/funk.js"></script>
 </body>
 
 </html>

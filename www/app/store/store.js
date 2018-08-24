@@ -27,6 +27,21 @@ export default class Store {
       })
       .catch(console.error)
   }
+  register(creds, draw) {
+    fetch('/auth/register', {
+      method: 'post',
+      body: JSON.stringify(creds),
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      }
+    })
+      .then(res => res.json())
+      .then(data => {
+        setState('user', new User(data))
+        draw()
+      })
+      .catch(console.error)
+  }
 
   constructor() {
     if (store) {
